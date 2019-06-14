@@ -1,16 +1,8 @@
 import {createStore} from 'redux'
 
 const initialState = {
-    properties: [
-        // {
-        //     "name": "shack",
-        //     "address": "98 Dump St.",
-        //     "city": "Fake Town",
-        //     "state": "Utah",
-        //     "zipCode": 84556
-          
-        //   }
-    ]
+    properties: []
+        
 }
 
 export const GET_HOUSES = 'GET_HOUSES'
