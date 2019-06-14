@@ -14,7 +14,7 @@ class House extends Component {
                 payload: res.data
             })
         }
-        )
+        ).catch(res.sendStatus(400)
     }
     render() {
         let {property} = this.props
