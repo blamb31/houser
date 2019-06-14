@@ -7,7 +7,6 @@ module.exports = {
     },
     createHouse: async (req, res) => {
         const db = req.app.get('db')
-        console.log(4444444, req.body)
         const { name,
                 address,
                 city,
@@ -21,7 +20,6 @@ module.exports = {
     },
     deleteHouse: async (req, res) => {
         const db = req.app.get('db')
-        console.log(req.params.id)
         const houseList = await db.delete_house(req.params.id)
 
 

@@ -15,7 +15,6 @@ function reducer(state = initialState, action) {
     
     switch(type) {
         case GET_HOUSES:
-            console.log(999999999, payload)
             return{ 
                 ...state,
                 properties:[...payload ]           

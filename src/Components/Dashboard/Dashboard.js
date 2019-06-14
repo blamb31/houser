@@ -16,7 +16,6 @@ class Dashboard extends Component {
 
     componentDidMount(){
         Axios.get('/api/houses').then( houseList => {
-            console.log(houseList.data)
             store.dispatch({
                 type: GET_HOUSES,
                 payload: houseList.data
