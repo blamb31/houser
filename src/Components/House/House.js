@@ -1,8 +1,20 @@
 import React, {Component} from 'react'
+import Axios from 'axios';
+import store, {DELETE_HOUSE} from '../../store'
 
 class House extends Component {
     constructor(props) {
         super(props)
+    }
+
+    deleteHouse (id) {
+        Axios.delete(`/api/houses/${id}`).then( res => {
+            store.dispatch({
+                type: DELETE_HOUSE,
+                payload: res.data
+            })
+        }
+        )
     }
     render() {
         let {property} = this.props
@@ -14,7 +26,7 @@ class House extends Component {
                 <h4>{property.state}</h4>
                 <h4>{property.zipCode}</h4>
 
-                <button>Delete</button>
+                <button onClick={() => this.deleteHouse(property.id)}>Delete</button>
 
             </div>
 

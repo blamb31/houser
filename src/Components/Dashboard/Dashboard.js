@@ -38,7 +38,7 @@ class Dashboard extends Component {
         let property = this.state.properties.map( (indProperty, index )=> {
             return (
                 <div>
-                    <House property={indProperty} key={index} />
+                    <House property={indProperty} id={index} key={index} />
                 </div>
             )
         })

@@ -16,7 +16,15 @@ module.exports = {
         } = req.body
         
 
-        /*const houseList = await*/ db.create_house( name, address, city, state, zipCode)
-        res.sendStatus(200)
+        const houseList = await db.create_house( name, address, city, state, zipCode)
+        res.status(200).send(houseList)
+    },
+    deleteHouse: async (req, res) => {
+        const db = req.app.get('db')
+        console.log(req.params.id)
+        const houseList = await db.delete_house(req.params.id)
+
+
+        res.status(200).send(houseList)
     }
 }
